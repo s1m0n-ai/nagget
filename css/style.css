@@ -1,0 +1,400 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: coconutz;
+    src: url(../fonts/coconutz.ttf);
+}
+
+@font-face {
+    font-family: Brocil;
+    src: url(../fonts/Brocil.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+body {
+    font-weight: 400;
+    color: #fff;
+    font-family: coconutz;
+
+}
+
+p {
+    font-size: 1.5vw;
+}
+
+
+.header {
+    position: relative;
+    height: 60vw;
+    padding: 2vw 5vw;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the entire background */
+    z-index: -1;
+    /* Places the video behind the content */
+}
+
+
+
+nav {
+    background-color: #fff;
+    padding: 1vw 4vw;
+    border-radius: 4vw;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 6px 0px 0px #000;
+}
+
+.logo {
+    width: 5vw;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.links a img {
+    width: 5vw;
+}
+
+.links .buy {
+    width: 15vw;
+}
+
+nav a {
+    font-size: 2vw;
+    color: #000;
+}
+
+
+.main h1 {
+    font-size: 15vw;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 12vw;
+    margin-top: 10vw;
+    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-color: black;
+    font-family: Brocil;
+
+}
+
+.main a img {
+    width: 15vw;
+    margin: auto;
+    margin-top: 3vw;
+}
+
+
+a img {
+    transition: all 0.3s ease-in-out;
+}
+
+a img:hover {
+    transform: scale(1.1);
+}
+
+
+.marquee_slider {
+    background-image: linear-gradient(to bottom, #f46531, #f58237, #f49d44, #f3b557, #f3cb6f, #f3d073, #f2d577, #f2da7c, #f2cf69, #f2c556, #f3b944, #f4ad31);
+    font-size: 3vw;
+    font-family: Brocil;
+    color: #000;
+    padding: 1vw 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    position: relative;
+    z-index: 99;
+}
+
+
+/* about  */
+.about {
+    background-color: #eacf9f;
+    padding: 10vw 5vw;
+    margin-top: -2vw;
+    position: relative;
+}
+
+.fly_1 {
+    position: absolute;
+    top: 10vw;
+}
+
+.fly_2 {
+    position: absolute;
+    top: 15vw;
+    right: 10vw;
+}
+
+.slider {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    position: relative;
+}
+
+.heading {
+    width: 20vw;
+    margin: auto;
+    margin-top: -7vw;
+}
+
+.slider marquee .iner {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.slider marquee .iner video {
+    width: 30vw;
+    height: 20vw;
+    border-radius: 2vw;
+    border: 2px solid #000;
+}
+
+
+.top_bottom {
+    animation: topbuttom 1s ease-in-out infinite alternate;
+}
+
+.leftright {
+    animation: fly-left-right 1s ease-in-out infinite alternate;
+}
+
+@keyframes topbuttom {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+        /* Adjust the value to control the distance */
+    }
+}
+
+@keyframes fly-left-right {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(10px);
+        /* Adjust the value to control the distance */
+    }
+}
+
+/* slider  */
+.slider {
+    background-color: #EA9020;
+    padding: 3vw 0;
+}
+
+
+.footer {
+    padding: 2vw;
+    border-bottom: 2px solid #000;
+    color: #000;
+    text-align: center;
+}
+
+/* - ======================== Loading overlay ============================*/
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Loader animation */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #EA9020;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#unmuteButton {
+    background-color: #fff;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 2vw;
+    right: 5vw;
+    font-size: 2vw;
+    color: #000;
+    padding-top: 0.5vw;
+    padding-left: 0.5;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    p {
+        font-size: 2.3vw;
+    }
+
+
+    nav {
+        border: 1px solid #000;
+        box-shadow: 0px 3px 0px 0px #000;
+    }
+
+    .logo {
+        width: 5vw;
+    }
+
+
+
+
+    .main h1 {
+        -webkit-text-stroke-width: 2px;
+        margin-top: 6vw;
+
+    }
+
+    .main a img {
+        width: 25vw;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+
+
+    .marquee_slider {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+
+    /* about  */
+    .about {
+        margin-top: -4vw;
+        padding: 20vw;
+    }
+
+    .fly_1 {
+        position: absolute;
+        top: 10vw;
+        width: 15vw;
+        left: 5vw;
+    }
+
+    .fly_2 {
+        position: absolute;
+        top: 15vw;
+        width: 15vw;
+        right: 10vw;
+    }
+
+    .slider {
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000;
+        padding: 5vw 0;
+    }
+
+
+
+    .slider marquee .iner video {
+        width: 70vw;
+        height: 50vw;
+        border-radius: 2vw;
+        border: 2px solid #000;
+        object-fit: cover;
+    }
+
+
+    .top_bottom {
+        animation: topbuttom 1s ease-in-out infinite alternate;
+    }
+
+    .leftright {
+        animation: fly-left-right 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes topbuttom {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(10px);
+            /* Adjust the value to control the distance */
+        }
+    }
+
+    @keyframes fly-left-right {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(10px);
+            /* Adjust the value to control the distance */
+        }
+    }
+
+    .heading {
+        width: 30vw;
+        margin-top: -11vw;
+    }
+
+    /* slider  */
+
+    .footer {
+        padding: 5vw;
+    }
+
+    .footer p {
+        font-size: 3vw;
+    }
+
+}
